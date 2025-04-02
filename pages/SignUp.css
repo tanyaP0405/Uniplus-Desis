@@ -1,0 +1,141 @@
+/* Force input and textarea text to be black, overriding other styles */
+input.neon-input, 
+textarea.neon-input {
+  color: #000 !important;
+  caret-color: #000 !important;
+}
+
+/* Also, ensure that placeholder text is dark if needed */
+input.neon-input::placeholder,
+textarea.neon-input::placeholder {
+  color: #555 !important;
+}
+
+/* The rest of your CSS remains unchanged */
+
+/* The main container with bubble background and neon lights */
+.signup-page.bubble-background {
+  background: #0c0f14; /* A dark background to contrast neon lights */
+  position: relative;
+}
+
+/* Animate a subtle neon glow on the entire page container */
+.neon-lights-anim {
+  animation: neonPulse 5s infinite alternate ease-in-out;
+}
+
+/* Keyframes for a slow neon pulse effect */
+@keyframes neonPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  }
+}
+
+/* Container styling */
+.signup-container {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Bubbles overlay - we can create multiple floating bubbles */
+.bubbles-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* so we can still click the form */
+  overflow: hidden;
+}
+
+.bubbles-overlay::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  width: 200%;
+  height: 100%;
+  background: radial-gradient(circle, #70c2ff 20%, transparent 20%) 0 0,
+              radial-gradient(circle, #70c2ff 20%, transparent 20%) 50px 50px,
+              radial-gradient(circle, #ff5efc 20%, transparent 20%) 0 50px,
+              radial-gradient(circle, #ff5efc 20%, transparent 20%) 50px 100px,
+              radial-gradient(circle, #70c2ff 20%, transparent 20%) 50px 150px,
+              radial-gradient(circle, #ff5efc 20%, transparent 20%) 50px 200px;
+  background-size: 100px 100px;
+  opacity: 0.1;
+  animation: floatBubbles 30s linear infinite;
+}
+
+/* Keyframes to move the pseudo-element upwards, giving a bubble float effect */
+@keyframes floatBubbles {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-120%);
+  }
+}
+
+/* Neon text effect */
+.neon-text {
+  color: #fff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+}
+
+/* A slight glow for the U+ logo background */
+.neon-logo-shadow {
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* Card shadow for a more "floating" effect */
+.neon-card-shadow {
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2), 0 0 30px rgba(0, 255, 255, 0.1);
+}
+
+/* Title glow */
+.neon-title {
+  color: #fff;
+  text-shadow: 0 0 5px #0ff, 0 0 15px #0ff;
+}
+
+/* Subtle description glow */
+.neon-description {
+  color: #e0e0e0;
+  text-shadow: 0 0 2px #0ff;
+}
+
+/* Label styling to match neon theme */
+.neon-label {
+  color: #cccccc;
+  text-shadow: 0 0 2px #0ff;
+}
+
+/* Inputs with subtle glow focus */
+.neon-input:focus {
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+/* Button with a neon edge */
+.neon-button {
+  border: none;
+  background: linear-gradient(90deg, #0ff, #09f);
+  color: #fff;
+  text-shadow: 0 0 3px #fff;
+  transition: all 0.3s ease;
+}
+
+.neon-button:hover {
+  background: linear-gradient(90deg, #09f, #0ff);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  transform: scale(1.02);
+}
+
+/* Heading text glow */
+.neon-header-text {
+  text-shadow: 0 0 3px #0ff;
+}
+

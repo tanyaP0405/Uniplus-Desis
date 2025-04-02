@@ -1,0 +1,153 @@
+/* Main container */
+.container {
+  max-width: 1200px;
+  margin: 80px auto 20px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.1); /* Glass effect */
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 255, 0.3); /* Futuristic blue glow */
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.category-filter {
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  position: relative;
+  padding-bottom: 20px;
+}
+.category-filter::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)); /* Fading effect */
+}
+
+.category-filter-button {
+  text-decoration: none;
+  background: none !important;  
+  color: #f7f4f4 !important;      
+  padding: 12px 20px !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  cursor: pointer;
+  border: none !important;
+  transition: color 0.3s;
+  flex: 1;
+  border-radius: 0 !important; /* Ensures no rounded corners */
+  text-align: center;
+}
+
+
+
+/* .categoy-button:not(:first-child) {
+  border-left: 2px solid rgb(255, 255, 255) !important;
+} */
+.category-filter .active {
+  color: #8caaeb !important;  /* Blue for active tab */
+  font-weight: bold !important;
+  text-decoration: underline !important;
+}
+
+.add-button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 15px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.announcement-form {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.announcement-form h2 {
+  text-align: center;
+}
+
+.announcement-form input,
+.announcement-form textarea,
+.announcement-form select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.announcement-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.announcement-list {
+  display: flex;
+  flex-direction: column;  /* Stack announcements vertically */
+  gap: 20px;              /* Adds spacing between announcements */
+  align-items: center;    /* Centers items horizontally */
+  width: 100%;
+  background:  rgba(255, 255, 255, 0.1) !important;
+}
+
+.announcement-item {
+  width: 50%; /* Adjust width as needed */
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: #fcf3f9;
+  margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.announcement-item img {
+  width: 100%;         /* Fill the container width */
+  max-height: 200px;   /* Limit how tall the image can get */
+  object-fit: cover;   /* Crop rather than stretch the image */
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+
+.delete-button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  .announcement-item {
+    width: 100%;
+  }
+}

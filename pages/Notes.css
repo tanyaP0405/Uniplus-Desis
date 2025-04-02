@@ -1,0 +1,182 @@
+
+body {
+  background: #e2e4e9; /* Deep futuristic blue */
+  color: rgb(3, 3, 3);
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+/* Add shadow & animation for elements with .border.p-2 classes */
+.border.p-2 {
+  background-color: #111;         /* Dark background */
+  color: #fff;                    /* Light text for contrast */
+  border: 1px solid #555;        /* Subtle border */
+  box-shadow: 0 4px 8px rgba(0, 255, 0, 0.2); /* Greenish glow shadow */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.border.p-2:hover {
+  box-shadow: 0 8px 16px rgba(0, 255, 0, 0.4); /* Stronger glow on hover */
+  transform: translateY(-2px);                /* Slight lift effect */
+}
+
+
+
+.notes-container {
+  /* Force black background for high contrast */
+  background: #000 !important;
+  max-width: 1200px;
+  margin: 80px auto 20px;
+  padding: 25px;
+  /* Position & overflow needed for pseudo-element animations */
+  position: relative;
+  overflow: hidden;
+
+  /* Example border-radius & box-shadow for a glowing effect */
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+/* Pseudo-element that handles the animated “lightning” overlay */
+.notes-container::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top: 0; right: 0; bottom: 0; left: 0; */
+  pointer-events: none; /* So clicks pass through to content */
+
+  /* A diagonal gradient with neon colors, sized bigger so it can move across container */
+  background: linear-gradient(
+    45deg,
+    rgba(0, 255, 255, 0.3) 0%,
+    rgba(255, 0, 255, 0.3) 50%,
+    rgba(0, 255, 255, 0.3) 100%
+  );
+  background-size: 400% 400%;
+
+  /* Use blend mode so the gradient glows over black background */
+  mix-blend-mode: screen;
+
+  /* Two animations combined: diagonal movement + flicker */
+  animation: lightningAnim 4s infinite linear, flicker 2s infinite;
+}
+
+/* 1) Moves the gradient left-to-right (or diagonal) across the container */
+@keyframes lightningAnim {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 2) Simulates a flickering or flashing effect */
+@keyframes flicker {
+  /* Most of the time at full opacity, occasionally dip to ~60% */
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 1;
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.6;
+  }
+}
+
+/* Centering the form */
+.form-container {
+  position: fixed;  /* Ensures it stays in place */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers it properly */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Adds a backdrop */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999 !important;
+  display: flex !important;
+}
+
+.form-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+  max-height: 90vh;  /* Prevents it from exceeding screen */
+  overflow-y: auto;  /* Adds scrolling if content is too large */
+}
+
+
+/* Input Fields */
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+/* Upload Button */
+button {
+  width: 30%;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+
+.admin-delete-btn {
+  background-color: #ff4d4d; /* Bright red */
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: 20px;
+  transition: background-color 0.2s ease-in-out, transform 0.1s;
+  margin-top: 5px;
+  margin-left: auto;
+}
+
+.admin-delete-btn:hover {
+  background-color: #cc0000; /* Darker red */
+  transform: scale(1.05);
+}
+
+.admin-delete-btn:active {
+  background-color: #a30000;
+  transform: scale(0.98);
+}
+
+.like-btn {
+  font-size: 18px; /* Slightly smaller than before */
+  color: #ff4d4d; /* Red color */
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  padding: 5px;
+}
+
+.like-btn:hover {
+  transform: scale(1.1);
+}
+
+
+.like-btn:focus {
+  outline: none;
+}

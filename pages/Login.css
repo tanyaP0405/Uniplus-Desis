@@ -1,0 +1,111 @@
+/* login.css */
+
+/* Main page container with a subtle neon border */
+.login-page.neon-border {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2), inset 0 0 10px rgba(0, 255, 255, 0.2);
+  border-radius: 8px;
+}
+
+/* Animated gradient lights overlay */
+.moving-lights-overlay {
+  background: linear-gradient(45deg, rgba(255,0,0,0.3), rgba(0,0,255,0.3), rgba(0,255,0,0.3));
+  background-size: 400% 400%;
+  animation: moveLights 20s ease infinite;
+}
+
+/* Keyframes for the moving-lights-overlay */
+@keyframes moveLights {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Additional neon glow effect on the container */
+.login-container {
+  margin-top: 3%;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Class to animate any lights we want */
+.animated-lights {
+  animation: pulseGlow 2s ease-in-out infinite alternate;
+}
+
+/* Subtle pulse for container or elements */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  }
+}
+
+/* Neon text example */
+.neon-text {
+  color: #ffffff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+}
+
+/* A slight glow for the U+ logo background */
+.neon-logo-shadow {
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* Card shadow for a more "floating" effect */
+.neon-card-shadow {
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2), 0 0 30px rgba(0, 255, 255, 0.1);
+}
+
+/* Title glow */
+.neon-title {
+  color: #fff;
+  text-shadow: 0 0 5px #0ff, 0 0 15px #0ff;
+}
+
+/* Subtle description glow */
+.neon-description {
+  color: #e0e0e0;
+  text-shadow: 0 0 2px #0ff;
+}
+
+/* Slight shadow behind error boxes */
+.error-box-shadow {
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+}
+
+/* Inputs with subtle glow focus */
+.neon-input:focus {
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+/* Label styling to match neon theme */
+.neon-label {
+  color: #cccccc;
+  text-shadow: 0 0 2px #0ff;
+}
+
+/* Button with a neon edge */
+.neon-button {
+  border: none;
+  background: linear-gradient(90deg, #0ff, #09f);
+  color: #fff;
+  text-shadow: 0 0 3px #fff;
+  transition: all 0.3s ease;
+}
+
+.neon-button:hover {
+  background: linear-gradient(90deg, #09f, #0ff);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  transform: scale(1.02);
+}
